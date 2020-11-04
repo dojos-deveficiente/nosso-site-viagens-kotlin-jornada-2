@@ -1,4 +1,4 @@
-package com.acme.decolar
+package com.acme.decolar.pais
 
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestMapping
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController
 class PaisesController {
 
 	@PostMapping
-	fun novoPais(pais: PaisRequest) {
+	fun novoPais(novoPaisRequest: NovoPaisRequest) {
 
 	}
 
