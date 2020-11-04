@@ -1,12 +1,26 @@
 {
 	"info": {
-		"_postman_id": "3d5bdc09-1710-4923-a9ec-1ad701f52046",
+		"_postman_id": "59ed643a-0435-4ee3-8143-a64b663098be",
 		"name": "Decolar API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "Cadastro de Pais",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ccfeb60c-7072-41eb-9c9e-694f8c978f4d",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [
@@ -19,6 +33,94 @@
 				"body": {
 					"mode": "raw",
 					"raw": "{\n    \"nome\": \"Brasil\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/api/admin/paises",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"admin",
+						"paises"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastro de Pais sem nome",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9297cda1-a460-4e74-b7b0-0946288bf9e4",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/api/admin/paises",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"admin",
+						"paises"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastro de Pais nome em branco",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c0b6e4c7-cf8a-4d8b-9fb0-b766f17a2ae8",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\" : \"\"\n}"
 				},
 				"url": {
 					"raw": "localhost:8080/api/admin/paises",
