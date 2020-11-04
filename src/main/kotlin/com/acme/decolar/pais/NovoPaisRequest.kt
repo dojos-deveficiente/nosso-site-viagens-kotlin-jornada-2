@@ -1,4 +1,6 @@
 package com.acme.decolar.pais
 
-class NovoPaisRequest(val nome: String) {
+import javax.validation.constraints.NotBlank
+
+class NovoPaisRequest(@field:NotBlank val nome: String) {
 }

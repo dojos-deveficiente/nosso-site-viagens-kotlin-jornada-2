@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.util.UriComponentsBuilder
 import javax.validation.Valid
 
 @RestController
@@ -12,8 +13,14 @@ import javax.validation.Valid
 class PaisesController {
 
 	@PostMapping
-	fun novoPais(@Valid @RequestBody novoPaisRequest: NovoPaisRequest): ResponseEntity<Pais> {
-		return ResponseEntity.ok(novoPaisRequest.toModel())
+	fun novoPais(@Valid @RequestBody novoPaisRequest: NovoPaisRequest,
+	             uriComponentsBuilder: UriComponentsBuilder ): ResponseEntity<Pais> {
+
+		val model = novoPaisRequest.toModel()
+
+		val path = uriComponentsBuilder.path("/api/admin/paises/${model.id}").build()
+
+		return ResponseEntity.created(path.toUri()).build();
 	}
 
 }
