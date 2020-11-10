@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "ee19108b-d1da-4144-b391-83dfd30965f9",
+		"_postman_id": "dbdcf6b7-8f7b-491e-acb2-3fed2ffa9f2e",
 		"name": "Decolar API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -11,7 +11,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "36ffc055-047a-499f-b497-5402993b6847",
+						"id": "fc42aceb-7b0c-4211-a668-1131c9c21676",
 						"exec": [
 							"pm.test(\"Status code is 201\", function () {",
 							"    pm.response.to.have.status(201);",
@@ -55,7 +55,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "ab561e66-20d8-4fd9-a919-237c244d7d64",
+						"id": "a5ebf3e4-0d30-4c1a-8c2e-06b0670a30d4",
 						"exec": [
 							"pm.test(\"Status code is 400\", function () {",
 							"    pm.response.to.have.status(400);",
@@ -99,7 +99,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b53063b3-580a-4269-8217-37fa89b37ba1",
+						"id": "cb0c308d-a6ff-4514-ab64-dd385c2e6475",
 						"exec": [
 							"pm.test(\"Status code is 400\", function () {",
 							"    pm.response.to.have.status(400);",
@@ -132,6 +132,35 @@
 						"api",
 						"admin",
 						"paises"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadatro de Compania",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/admin/companias",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"admin",
+						"companias"
 					]
 				}
 			},
