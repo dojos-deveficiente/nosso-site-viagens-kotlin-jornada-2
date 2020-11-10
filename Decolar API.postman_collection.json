@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "dbdcf6b7-8f7b-491e-acb2-3fed2ffa9f2e",
+		"_postman_id": "44c5345b-d4c0-4aa2-ae72-9df69cc60588",
 		"name": "Decolar API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -11,7 +11,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "fc42aceb-7b0c-4211-a668-1131c9c21676",
+						"id": "ad533d8d-ee0f-4d05-8ead-df64de74ffa2",
 						"exec": [
 							"pm.test(\"Status code is 201\", function () {",
 							"    pm.response.to.have.status(201);",
@@ -55,7 +55,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "a5ebf3e4-0d30-4c1a-8c2e-06b0670a30d4",
+						"id": "4603d240-5a15-41b8-9038-b39d4077aab6",
 						"exec": [
 							"pm.test(\"Status code is 400\", function () {",
 							"    pm.response.to.have.status(400);",
@@ -99,7 +99,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "cb0c308d-a6ff-4514-ab64-dd385c2e6475",
+						"id": "a4a37f73-2b71-4677-af90-e3b9ff8937fc",
 						"exec": [
 							"pm.test(\"Status code is 400\", function () {",
 							"    pm.response.to.have.status(400);",
@@ -144,7 +144,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "",
+					"raw": "{\n    \"nome\": \"\",\n    \"paisId\": \"2357ccee-23af-11eb-adc1-0242ac120002\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
