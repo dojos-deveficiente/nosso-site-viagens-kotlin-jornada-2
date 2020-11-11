@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "44c5345b-d4c0-4aa2-ae72-9df69cc60588",
+		"_postman_id": "f5fc3ec7-fda8-4de7-94cf-bce65e2ec126",
 		"name": "Decolar API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -11,7 +11,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "ad533d8d-ee0f-4d05-8ead-df64de74ffa2",
+						"id": "55c7fc58-b7ff-4058-a8ed-a090fb781626",
 						"exec": [
 							"pm.test(\"Status code is 201\", function () {",
 							"    pm.response.to.have.status(201);",
@@ -55,7 +55,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "4603d240-5a15-41b8-9038-b39d4077aab6",
+						"id": "d516874a-3aa7-447a-bccb-7d6aba28a095",
 						"exec": [
 							"pm.test(\"Status code is 400\", function () {",
 							"    pm.response.to.have.status(400);",
@@ -99,7 +99,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "a4a37f73-2b71-4677-af90-e3b9ff8937fc",
+						"id": "2b55ec74-f1ca-4b8d-a6ed-0d059b5ec456",
 						"exec": [
 							"pm.test(\"Status code is 400\", function () {",
 							"    pm.response.to.have.status(400);",
@@ -139,12 +139,112 @@
 		},
 		{
 			"name": "Cadatro de Compania",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "98dd35bb-9a7d-4064-8c15-167591dfbca6",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Latam\",\n    \"paisId\": \"2357ccee-23af-11eb-adc1-0242ac120002\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/admin/companias",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"admin",
+						"companias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadatro de Compania sem nome",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e1e3a527-ce7f-4f36-a870-7ac6a5a15aa4",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
 					"raw": "{\n    \"nome\": \"\",\n    \"paisId\": \"2357ccee-23af-11eb-adc1-0242ac120002\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/admin/companias",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"admin",
+						"companias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadatro de Compania sem paisId",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "47dce9f8-93ec-4ae4-af13-de7f1804a548",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Argentina\",\n    \"paisId\": null\n}",
 					"options": {
 						"raw": {
 							"language": "json"

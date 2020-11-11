@@ -5,13 +5,19 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.util.UriComponentsBuilder
+import javax.validation.Valid
 
 @RestController
 @RequestMapping("/api/admin/companias")
 class CompaniaController {
 
     @PostMapping
-    fun novaCompania(@RequestBody companiaRequest:NovaCompaniaRequest): ResponseEntity<Void> {
-        return ResponseEntity.ok().build()
+    fun novaCompania(@Valid @RequestBody novaCompaniaRequest:NovaCompaniaRequest,
+                     uriComponentsBuilder: UriComponentsBuilder): ResponseEntity<Void> {
+        val model = novaCompaniaRequest.toModel()
+        val path = uriComponentsBuilder.path("/api/admin/companias/${model.id}").build()
+
+        return ResponseEntity.created(path.toUri()).build()
     }
 }
