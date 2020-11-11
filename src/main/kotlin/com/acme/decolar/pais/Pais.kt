@@ -8,4 +8,5 @@ import javax.persistence.Id
 class Pais(
     @Id
     val id: UUID = UUID.randomUUID(),
-    val nome: String)
+    val nome: String
+)
