@@ -8,6 +8,7 @@ import javax.validation.constraints.NotNull
 
 class NovaCompaniaRequest(
         @field:NotBlank
+        @field:UniqueValue<Compania>(domainClass = Compania::class, field = "nome")
         val nome: String,
         @field:NotNull
         val paisId: UUID) {
