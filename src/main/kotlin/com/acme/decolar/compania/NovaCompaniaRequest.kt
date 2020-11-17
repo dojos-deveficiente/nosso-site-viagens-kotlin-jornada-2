@@ -8,12 +8,12 @@ import javax.validation.constraints.NotNull
 
 class NovaCompaniaRequest(
         @field:NotBlank
-        @field:UniqueValue<Compania>(domainClass = Compania::class, field = "nome")
+        @field:UniqueValue(domainClass = Compania::class, field = "nome")
         val nome: String,
         @field:NotNull
         val paisId: UUID) {
     fun toModel(entityManager: EntityManager): Compania {
-        
+
         return Compania(nome = nome, pais = entityManager.find(Pais::class.java, paisId))
     }
 }

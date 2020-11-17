@@ -1,5 +1,19 @@
 package com.acme.decolar.compania
 
+import java.lang.annotation.Documented
+import java.lang.annotation.ElementType.FIELD
+import javax.validation.Constraint
+import javax.validation.Payload
+import kotlin.annotation.AnnotationRetention.RUNTIME
 import kotlin.reflect.KClass
 
-annotation class UniqueValue<T : Any>(val domainClass: KClass<T>, val field: String)
+@Documented
+@Constraint(validatedBy = {UniqueValueValidator.class})
+@Target([FIELD])
+@Retention(RUNTIME)
+annotation class UniqueValue(
+        val domainClass: KClass<*>,
+        val field: String,
+        val message: String = "com.acme.decolar.shared.uniquevalue",
+        val groups: Array<KClass<*>> = [],
+        val payload: Array<KClass<in Payload>> = [])
