@@ -1,14 +1,14 @@
 package com.acme.decolar.compania
 
 import java.lang.annotation.Documented
-import  kotlin.annotation.AnnotationTarget.FIELD;
 import javax.validation.Constraint
 import javax.validation.Payload
 import kotlin.annotation.AnnotationRetention.RUNTIME
+import kotlin.annotation.AnnotationTarget.FIELD
 import kotlin.reflect.KClass
 
 @Documented
-@Constraint(validatedBy = UniqueValueValidator::class)
+@Constraint(validatedBy = [UniqueValueValidator::class])
 @Target(FIELD)
 @Retention(RUNTIME)
 annotation class UniqueValue(

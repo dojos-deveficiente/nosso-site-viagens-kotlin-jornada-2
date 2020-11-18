@@ -16,10 +16,17 @@ class UniqueValueValidator(val manager: EntityManager) :ConstraintValidator<Uniq
             return true
         }
 
-        manager.createQuery("SELECT 1 FROM ${domainClass.simpleName} WHERE ${field} = :value")
+        val resultList = manager
+                .createQuery("SELECT 1 FROM ${domainClass.simpleName} WHERE ${field} = :value")
+                .setParameter("value", value)
+                .resultList
+
+        assert(resultList.size <= 1)
+
+        return resultList.isEmpty()
     }
 
-    override fun initialize(uniquevalue: UniqueValue?) {
+    override fun initialize(uniquevalue: UniqueValue) {
 
         this.domainClass = uniquevalue.domainClass;
         this.field = uniquevalue.field
