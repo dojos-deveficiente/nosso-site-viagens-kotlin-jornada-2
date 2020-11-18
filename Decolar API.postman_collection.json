@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "f5fc3ec7-fda8-4de7-94cf-bce65e2ec126",
+		"_postman_id": "a784e700-48bd-4277-9aec-dc30e4c3314f",
 		"name": "Decolar API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -11,7 +11,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "55c7fc58-b7ff-4058-a8ed-a090fb781626",
+						"id": "d5951dea-a0b7-448a-96d6-9a7a6ffff7fb",
 						"exec": [
 							"pm.test(\"Status code is 201\", function () {",
 							"    pm.response.to.have.status(201);",
@@ -54,7 +54,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "d516874a-3aa7-447a-bccb-7d6aba28a095",
+						"id": "33a53bc5-d62f-47f6-afc2-213685ad7803",
 						"exec": [
 							"pm.test(\"Status code is 400\", function () {",
 							"    pm.response.to.have.status(400);",
@@ -98,7 +98,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "2b55ec74-f1ca-4b8d-a6ed-0d059b5ec456",
+						"id": "e11627bb-4bb6-4cc4-858c-35792782726a",
 						"exec": [
 							"pm.test(\"Status code is 400\", function () {",
 							"    pm.response.to.have.status(400);",
@@ -142,7 +142,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "98dd35bb-9a7d-4064-8c15-167591dfbca6",
+						"id": "2bd6bdaa-a5e8-4909-b577-5066885ea958",
 						"exec": [
 							"pm.test(\"Status code is 201\", function () {",
 							"    pm.response.to.have.status(201);",
@@ -185,7 +185,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "e1e3a527-ce7f-4f36-a870-7ac6a5a15aa4",
+						"id": "fecff543-7cf5-4186-a92d-7182ca450433",
 						"exec": [
 							"pm.test(\"Status code is 400\", function () {",
 							"    pm.response.to.have.status(400);",
@@ -228,7 +228,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "47dce9f8-93ec-4ae4-af13-de7f1804a548",
+						"id": "e18bde1c-37e3-4148-b4f8-46d3fc1c19ba",
 						"exec": [
 							"pm.test(\"Status code is 400\", function () {",
 							"    pm.response.to.have.status(400);",
@@ -271,7 +271,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "3acd67fa-311d-414a-a217-b89f041be51a",
+						"id": "e3ffa505-a6d9-4790-b15b-90b6ee20e655",
 						"exec": [
 							"pm.test(\"Status code is 201\", function () {",
 							"    pm.response.to.have.status(201);",
@@ -286,7 +286,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"nome\": \"Guarulhos\",\n    \"paisId\": \"abfa8cd7-1938-4610-90d8-a0177c040dcb\"\n}",
+					"raw": "{\n    \"nome\": \"Guarulhos\",\n    \"paisId\": \"ff2774a6-d3d8-4ff9-ad3c-467307cc409f\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -303,6 +303,49 @@
 						"api",
 						"admin",
 						"aeroportos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadatro de Rota",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ceb18620-a737-4888-b2a1-43eb100a10d5",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Guarulhos\",\n    \"origemId\": \"ff2774a6-d3d8-4ff9-ad3c-467307cc409f\",\n    \"destinoId\": \"ff2774a6-d3d8-4ff9-ad3c-467307cc409f\",\n    \"duracao\": \"100\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/admin/rotas",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"admin",
+						"rotas"
 					]
 				}
 			},
